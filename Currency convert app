@@ -1,0 +1,29 @@
+import pandas as pd
+data=pd.read_csv('C:\\Users\\BI20064937\\Pictures\\table.csv')
+dict_data=pd.to_dict()
+
+class Currency:
+    
+   def __init__(self):
+         self.dict_data=dict_data
+           
+  
+   """Currency converting from 1 region to another"""
+   def convert(self,base_currency,term_currency,amount):
+        initial_amount = amount
+        if base_currency!="USD":
+            amount = amount / self.dict_data[base_currency]
+        if term_currency=="USD":
+            return intial_amount,base_currency,"=",amount,term_currency
+        else:
+            return intial_amount,base_currency,"=",amount*self.dict_data[term_currency],term_currency
+             
+        
+
+if __name__ == "__main__": 
+      
+    c = Currency() 
+    Base_country = input("From Country: ") 
+    Term_country = input("TO Country: ") 
+    amount = int(input("Amount: ")) 
+    c.convert(Base_country, Term_country, amount) 
