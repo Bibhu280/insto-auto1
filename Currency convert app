@@ -25,5 +25,5 @@ if __name__ == "__main__":
     c = Currency() 
     Base_country = input("From Country: ") 
     Term_country = input("TO Country: ") 
-    amount = int(input("Amount: ")) 
+    amount = float(input("Amount: ")) 
     c.convert(Base_country, Term_country, amount) 
